@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tools Hub</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,sans-serif;
+background:#090b18;color:white;
+}
+header{
+padding:18px 6%;display:flex;
+justify-content:space-between;align-items:center;
+border-bottom:1px solid #25283d;
+}
+.logo{font-size:23px;font-weight:bold;color:#a78bfa}
+nav a{color:#ccc;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{text-align:center;padding:65px 18px 35px}
+.tag{color:#b69aff;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(34px,7vw,58px);line-height:1.15}
+h1 span{color:#a78bfa}
+.hero p{color:#a4a6b8;margin:18px auto;max-width:500px;line-height:1.6}
+.search{
+max-width:550px;margin:25px auto;
+display:flex;background:#191c30;
+padding:7px;border:1px solid #39334f;border-radius:12px;
+}
+.search input{
+flex:1;min-width:0;background:none;border:0;
+outline:none;color:white;padding:12px;
+}
+.search button{
+background:#9875f5;border:0;border-radius:8px;
+padding:12px 18px;color:white;font-weight:bold;
+}
+.section{padding:30px 6%}
+.section h2{font-size:25px;margin-bottom:8px}
+.sub{color:#9295a9;font-size:14px;margin-bottom:24px}
+.tools{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+gap:15px;
+}
+.tool{
+background:#15182a;border:1px solid #292d45;
+border-radius:15px;padding:20px 15px;
+transition:.2s;cursor:pointer;
+}
+.tool:hover{transform:translateY(-4px);border-color:#9875f5}
+.icon{font-size:30px;margin-bottom:15px}
+.tool h3{font-size:16px;margin-bottom:8px}
+.tool p{font-size:12px;color:#999db2;line-height:1.5}
+.tool a{display:block;color:#b69aff;margin-top:15px;font-size:13px;text-decoration:none}
+footer{text-align:center;padding:35px 15px;color:#777b90;border-top:1px solid #25283d;margin-top:40px}
+@media(max-width:500px){
+header{padding:16px}
+nav a{margin-left:9px;font-size:12px}
+.section{padding:25px 16px}
+.hero{padding-top:50px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">✦ AI Tools Hub</div>
+<nav>
+<a href="#">Home</a>
+<a href="#tools">Tools</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="tag">✦ YOUR CREATIVE AI PLATFORM</div>
+<h1>Make Amazing Things<br>With <span>AI Magic.</span></h1>
+<p>Discover powerful AI tools to create images, write stories, design logos and bring your ideas to life.</p>
+
+<div class="search">
+<input id="search" placeholder="Search AI tools...">
+<button onclick="searchTools()">Search</button>
+</div>
+</section>
+
+<section class="section" id="tools">
+<h2>Explore AI Tools</h2>
+<p class="sub">Everything you need to create something amazing.</p>
+
+<div class="tools" id="toolGrid">
+
+<div class="tool" data-name="image generator">
+<div class="icon">🎨</div>
+<h3>AI Image Generator</h3>
+<p>Turn your ideas into images.</p>
+<a href="#">Explore →</a>
+</div>
+
+<div class="tool" data-name="photo editor">
+<div class="icon">📸</div>
+<h3>AI Photo Editor</h3>
+<p>Give your photos a new look.</p>
+<a href="#">Explore →</a>
+</div>
+
+<div class="tool" data-name="story writer">
+<div class="icon">✍️</div>
+<h3>AI Story Writer</h3>
+<p>Create stories and scripts.</p>
+<a href="#">Explore →</a>
+</div>
+
+<div class="tool" data-name="logo maker">
+<div class="icon">💎</div>
+<h3>AI Logo Maker</h3>
+<p>Design creative brand logos.</p>
+<a href="#">Explore →</a>
+</div>
+
+<div class="tool" data-name="caption generator">
+<div class="icon">💬</div>
+<h3>AI Captions</h3>
+<p>Generate social media captions.</p>
+<a href="#">Explore →</a>
+</div>
+
+<div class="tool" data-name="video maker">
+<div class="icon">🎬</div>
+<h3>AI Video Maker</h3>
+<p>Explore AI video creation.</p>
+<a href="#">Explore →</a>
+</div>
+
+<div class="tool" data-name="voice generator">
+<div class="icon">🎙️</div>
+<h3>AI Voice</h3>
+<p>Convert text into speech.</p>
+<a href="#">Explore →</a>
+</div>
+
+<div class="tool" data-name="background remover">
+<div class="icon">🪄</div>
+<h3>Background Remover</h3>
+<p>Remove image backgrounds.</p>
+<a href="#">Explore →</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 AI Tools Hub · Create Without Limits</p>
+</footer>
+
+<script>
+function searchTools(){
+const q=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".tool").forEach(tool=>{
+tool.style.display=tool.dataset.name.includes(q)?"block":"none";
+});
+}
+document.getElementById("search").addEventListener("input",searchTools);
+</script>
+
+</body>
+</html>
